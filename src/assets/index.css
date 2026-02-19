@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes gradient-bg {
+  0% { background-position: 0% 50%;}
+  50% { background-position: 100% 50%;}
+  100% { background-position: 0% 50%;}
+}
+.animate-gradient { background-size: 200% 200%; animation: gradient-bg 15s ease infinite; }
+
+/* Slightly stronger glass to make elements stand out on darker backgrounds */
+.glass { background: rgba(255,255,255,0.06); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.12); }
+
+/* Light section variant: switched to a near-white background so dark text is readable */
+.section-light { background-color: #fbfbfc; }
+.section-light.text-dark { color: #0b1220; }
+.section-light .glass { background: #ffffff; color: #0b1220; border-color: rgba(11,18,32,0.06); }
+
+.hero-mesh {
+  background-image:
+    radial-gradient(at 0% 0%, hsla(253, 16%, 7%, 1) 0, transparent 50%),
+    radial-gradient(at 50% 0%, hsla(225, 39%, 30%, 1) 0, transparent 50%),
+    radial-gradient(at 100% 0%, hsla(339, 49%, 30%, 1) 0, transparent 50%);
+}
+.reveal { opacity: 0; transform: translateY(30px); transition: all .8s ease-out; }
+.reveal.active { opacity: 1; transform: translateY(0); }
+.neon-glow-purple:hover { box-shadow: 0 0 20px rgba(168,85,247,0.4); }
+.neon-glow-cyan:hover { box-shadow: 0 0 20px rgba(34,211,238,0.4); }
+
+/* Readability tweaks when a section is light */
+.section-light h1,
+.section-light h2,
+.section-light h3,
+.section-light h4 { color: #0b1220; }
+.section-light p,
+.section-light .text-gray-400 { color: rgba(11,18,32,0.75); }
+.section-light a { color: rgba(11,18,32,0.9); }
+
+/* Override common light text utility classes when inside a light section so text remains readable */
+.section-light .text-white,
+.section-light .text-gray-50,
+.section-light .text-gray-100,
+.section-light .text-gray-200,
+.section-light .text-gray-300,
+.section-light .text-gray-400,
+.section-light .text-gray-500 {
+  color: #0b1220 !important;
+}
+
+/* Conversely, ensure colored accents (purple/cyan/pink) keep enough contrast; adjust if needed */
+.section-light .text-purple-400 { color: #6d28d9 !important; }
+.section-light .text-cyan-400 { color: #0891b2 !important; }
+.section-light .text-pink-400 { color: #fb7185 !important; }
