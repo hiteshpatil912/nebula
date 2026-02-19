@@ -7,6 +7,16 @@
 
 This project is a Vue 3 app built with Vite and Tailwind CSS (PostCSS).
 
+## Deployment & Build Configuration
+
+This project is configured for automated deployment to Netlify via GitHub Actions:
+- **`.nvmrc`:** Pins Node.js to version 18 for consistent builds on Netlify.
+- **`.gitignore`:** Excludes `node_modules/` and `dist/` from the repository so Netlify installs fresh dependencies (`npm ci`) during each build, avoiding permission issues with pre-committed node_modules.
+- **`netlify.toml`:** Configures build command (`npm run build`) and publish directory (`dist`).
+- **`.github/workflows/netlify-deploy.yml`:** GitHub Actions workflow that builds on all branches and deploys to Netlify production only when pushing to `main`.
+
+For Netlify deploy badges, see the placeholders at the top of this README.
+
 Important notes
 - `index.html` must remain in the project root (this is the Vite entry/mount point). Do NOT open `index.html` directly in the browser using `file://` — it relies on Vite's dev server or an HTTP server to load ES modules.
 - The Tailwind styles are built during the Vite build process from `src/assets/index.css`. The dev server (npm run dev) injects the compiled CSS via HMR.
