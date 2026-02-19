@@ -42,12 +42,12 @@ jobs:
         with:
           name: dist
 
-      - name: Deploy to Netlify (via Netlify CLI)
+      - name: Deploy to Netlify (official GitHub Action)
+        uses: netlify/actions/cli@v1
+        with:
+          args: deploy --dir=dist --prod --site=${{ secrets.NETLIFY_SITE_ID }}
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-        run: |
-          npx --yes netlify-cli@latest deploy --dir=dist --site=${NETLIFY_SITE_ID} --auth=${NETLIFY_AUTH_TOKEN} --prod
 
 # Notes:
 # - Create two repository secrets: NETLIFY_AUTH_TOKEN and NETLIFY_SITE_ID
