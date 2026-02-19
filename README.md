@@ -1,5 +1,7 @@
 # Nebula — Vue + Vite Portfolio
 
+[![Netlify Deploy Status](https://github.com/hiteshpatil912/nebula/actions/workflows/netlify-deploy.yml/badge.svg)](https://github.com/hiteshpatil912/nebula/actions/workflows/netlify-deploy.yml)
+
 This project is a Vue 3 app built with Vite and Tailwind CSS (PostCSS).
 
 Important notes
