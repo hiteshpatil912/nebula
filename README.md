@@ -2,6 +2,9 @@
 
 [![Netlify Deploy Status](https://github.com/hiteshpatil912/nebula/actions/workflows/netlify-deploy.yml/badge.svg)](https://github.com/hiteshpatil912/nebula/actions/workflows/netlify-deploy.yml)
 
+[![Netlify Deploys](https://api.netlify.com/api/v1/badges/<NETLIFY_BADGE_ID>/deploy-status)](https://app.netlify.com/sites/<YOUR_SITE_NAME>/deploys)
+<!-- Replace <NETLIFY_BADGE_ID> and <YOUR_SITE_NAME> with values from Netlify Site settings → Build & deploy → Build badges -->
+
 This project is a Vue 3 app built with Vite and Tailwind CSS (PostCSS).
 
 Important notes
